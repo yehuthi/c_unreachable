@@ -12,7 +12,7 @@
 #define unreachable() (__assume(0))
 
 // C11 noreturn
-#elseif __STDC_VERSION__ >= 201112L
+#elif __STDC_VERSION__ >= 201112L
 _Noreturn inline void __c_unreachable_impl() {}
 #define unreachable() (__c_unreachable_impl())
 
