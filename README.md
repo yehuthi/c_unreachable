@@ -28,6 +28,21 @@ int main() {
 }
 ```
 
+## CMake Snippet
+
+```cmake
+include(FetchContent)
+FetchContent_Declare(
+    c_unreachable
+    GIT_REPOSITORY https://github.com/yehuthi/c_unreachable.git
+    GIT_TAG 6cc3b0c52ad0f61823e1ba2a7a7f7f6d448d9293
+)
+FetchContent_MakeAvailable(c_unreachable)
+
+add_executable(my_project src/main.c)
+target_link_libraries(my_project c_unreachable)
+```
+
 ## Implementation Priority
 
 1. [C23](https://en.cppreference.com/w/c/program/unreachable)
