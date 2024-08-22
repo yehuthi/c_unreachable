@@ -8,7 +8,7 @@
 // Compiler extensions
 #ifdef __GNUC__
 #define unreachable() (__builtin_unreachable())
-#elifdef _MSC_VER
+#elif defined(_MSC_VER)
 #define unreachable() (__assume(0))
 
 // C11 noreturn
