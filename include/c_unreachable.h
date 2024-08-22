@@ -3,10 +3,9 @@
 // C23
 #if __STDC_VERSION__ >= 202311L
 #include <stddef.h>
-#else
 
 // Compiler extensions
-#ifdef __GNUC__
+#elif defined(__GNUC__)
 #define unreachable() (__builtin_unreachable())
 #elif defined(_MSC_VER)
 #define unreachable() (__assume(0))
@@ -20,5 +19,3 @@ _Noreturn inline void __c_unreachable_impl() {}
 #else
 #define unreachable
 #endif
-
-#endif // C23 branch
