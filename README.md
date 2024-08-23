@@ -72,5 +72,15 @@ target_link_libraries(my_project c_unreachable)
     - GCC-like (GCC, Clang): [`__builtin_unreachable`](https://gcc.gnu.org/onlinedocs/gcc/Other-Builtins.html#index-_005f_005fbuiltin_005funreachable)
     - MSVC-like (MSVC, Intel): [`__assume(0)`](https://learn.microsoft.com/en-us/cpp/intrinsics/assume)
 3. C11 [`_Noreturn`](https://en.cppreference.com/w/c/language/_Noreturn)
+4. None: The call to unreachable expands to nothing; the compiler is not hinted.
 
-If none of the conditions apply, the call to unreachable expands to nothing; no warning or error is emitted.
+### Diagnostics
+
+You can set the `C_UNREACHABLE_DIAG` diagnostics macro to observe the implementation actually used.
+
+When set, a message with the method will show in the compiler's output.
+If set to `1` via an error message, `2` for warning, and `3` for message.
+
+Negate the value to only trigger it when no method is used and the compiler cannot be hinted.
+E.g. set to `-1` to trigger a compilation error only when hinting was not possible (very discouraged outside
+of diagnostics).
