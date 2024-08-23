@@ -23,7 +23,7 @@ _Noreturn inline void __c_unreachable_impl() {}
 
 // give up
 #else
-#define unreachable
+#define unreachable()
 #endif
 
 #endif // include guard
