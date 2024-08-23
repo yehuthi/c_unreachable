@@ -1,4 +1,5 @@
-#pragma once
+#ifndef __C_UNREACHABLE_H
+#define __C_UNREACHABLE_H
 
 // C23
 #if __STDC_VERSION__ >= 202311L
@@ -19,3 +20,5 @@ _Noreturn inline void __c_unreachable_impl() {}
 #else
 #define unreachable
 #endif
+
+#endif // include guard
