@@ -45,7 +45,7 @@
 
 // C11 noreturn
 #elif __STDC_VERSION__ >= 201112L
-_Noreturn inline void __c_unreachable_impl() {}
+_Noreturn static inline void __c_unreachable_impl() {}
 #define unreachable() (__c_unreachable_impl())
 // Diagnostics {{{
 #if C_UNREACHABLE_DIAG == 1
