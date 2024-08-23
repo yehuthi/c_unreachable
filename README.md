@@ -57,7 +57,7 @@ include(FetchContent)
 FetchContent_Declare(
     c_unreachable
     GIT_REPOSITORY https://github.com/yehuthi/c_unreachable.git
-    GIT_TAG 6cc3b0c52ad0f61823e1ba2a7a7f7f6d448d9293
+    GIT_TAG 600bea27090c8e5c96ce5c1d3636683005ffe690
 )
 FetchContent_MakeAvailable(c_unreachable)
 
