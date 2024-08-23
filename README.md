@@ -45,7 +45,7 @@ target_link_libraries(my_project c_unreachable)
 
 ## Implementation Priority
 
-1. [C23](https://en.cppreference.com/w/c/program/unreachable)
+1. [C23 `unreachable`](https://en.cppreference.com/w/c/program/unreachable) if implemented
 2. Compiler extension
     - GCC-like (GCC, Clang): [`__builtin_unreachable`](https://gcc.gnu.org/onlinedocs/gcc/Other-Builtins.html#index-_005f_005fbuiltin_005funreachable)
     - MSVC-like (MSVC, Intel): [`__assume(0)`](https://learn.microsoft.com/en-us/cpp/intrinsics/assume)
