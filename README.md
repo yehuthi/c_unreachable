@@ -12,8 +12,30 @@ The library defines a function-like macro `unreachable`.
 >
 > If you want a safer version, you can use the standard library's [`assert(0 && "unreachable")`](https://en.cppreference.com/w/cpp/error/assert) (only check in debug build) or [`abort()`](https://en.cppreference.com/w/c/program/abort).
 
-## Example
+## Examples
 
+Branching:
+```c
+#include <stdint.h>
+#include "c_unreachable.h"
+
+typedef enum {
+    COLOR_RED,
+    COLOR_GREEN,
+    COLOR_BLUE,
+} color;
+
+uint32_t color_value(color c) {
+    switch (c) {
+        case COLOR_RED:   return 0xff0000;
+        case COLOR_GREEN: return 0x00ff00;
+        case COLOR_BLUE:  return 0x0000ff;
+        default: unreachable();
+    }
+}
+```
+
+Infinite loops:
 ```c
 #include "c_unreachable.h"
 #include <stdio.h>
