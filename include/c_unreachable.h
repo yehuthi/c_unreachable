@@ -62,9 +62,9 @@ _Noreturn inline void __c_unreachable_impl() {}
 // Diagnostics {{{
 #if C_UNREACHABLE_DIAG == 1 || C_UNREACHABLE_DIAG == -1
 #error c_unreachable method: none
-#elif C_UNREACHABLE_DIAG == 2 || C_UNREACHABLE_DIAG = -2
+#elif C_UNREACHABLE_DIAG == 2 || C_UNREACHABLE_DIAG == -2
 #warning c_unreachable method: none
-#elif C_UNREACHABLE_DIAG == 3 || C_UNREACHABLE_DIAG = -2
+#elif C_UNREACHABLE_DIAG == 3 || C_UNREACHABLE_DIAG == -2
 #pragma message("c_unreachable method: none")
 #endif
 // }}}
